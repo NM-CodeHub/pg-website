@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG Listings - PG Finder</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
+    header { background: #4a90e2; color: #fff; padding: 24px 0; text-align: center; }
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 16px; }
+    .search-bar { display: flex; gap: 12px; margin-bottom: 32px; justify-content: center; }
+    .search-bar input, .search-bar select { padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; }
+    .search-bar button { background: #4a90e2; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+    .search-bar button:hover { background: #357abd; }
+    .listings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px; }
+    .pg-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; display: flex; flex-direction: column; }
+    .pg-card img { width: 100%; height: 170px; object-fit: cover; }
+    .pg-card-content { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+    .pg-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 6px; }
+    .pg-location { color: #666; font-size: 1rem; margin-bottom: 10px; }
+    .pg-price { color: #4a90e2; font-size: 1.1rem; font-weight: 500; margin-bottom: 14px; }
+    .details-btn { background: #4a90e2; color: #fff; border: none; padding: 10px 0; border-radius: 6px; font-size: 1rem; cursor: pointer; transition: background 0.2s; width: 100%; }
+    .details-btn:hover { background: #357abd; }
+    @media (max-width: 600px) {
+      .container { padding: 0 4px; }
+      .search-bar { flex-direction: column; gap: 8px; }
+      .pg-card img { height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PG Listings</h1>
+  </header>
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" placeholder="Search by location or PG name..." />
+      <select>
+        <option value="">All Cities</option>
+        <option>Hyderabad</option>
+        <option>Bangalore</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+      </select>
+      <button>Search</button>
+    </div>
+    <div class="listings-grid">
+      <div class="pg-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="PG Room 1">
+        <div class="pg-card-content">
+          <div class="pg-title">Sunrise PG</div>
+          <div class="pg-location">Hyderabad, Telangana</div>
+          <div class="pg-price">₹6,000/month</div>
+          <button class="details-btn">View Details</button>
+        </div>
+      </div>
+      <div class="pg-card">
+        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80" alt="PG Room 2">
+        <div class="pg-card-content">
+          <div class="pg-title">Green Nest PG</div>
+          <div class="pg-location">Bangalore, Karnataka</div>
+          <div class="pg-price">₹7,500/month</div>
+          <button class="details-btn">View Details</button>
+        </div>
+      </div>
+      <div class="pg-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="PG Room 3">
+        <div class="pg-card-content">
+          <div class="pg-title">City Comfort PG</div>
+          <div class="pg-location">Mumbai, Maharashtra</div>
+          <div class="pg-price">₹8,200/month</div>
+          <button class="details-btn">View Details</button>
+        </div>
+      </div>
+      <div class="pg-card">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&q=80" alt="PG Room 4">
+        <div class="pg-card-content">
+          <div class="pg-title">Elite Stay PG</div>
+          <div class="pg-location">Delhi, India</div>
+          <div class="pg-price">₹9,000/month</div>
+          <button class="details-btn">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - PG Finder</title>
+  <title>Login - PG Finder</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222;
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7f7f7; margin: 0; }
     .back-btn {
       position: absolute;
       top: 24px;
@@ -23,16 +23,20 @@
     }
     .back-btn:hover { background: #357abd; }
     .container { max-width: 400px; margin: 60px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px 24px; position: relative; }
-    .back-btn { top: 10px; left: 10px; padding: 6px 12px; font-size: 0.95rem; }
-                     }
-    header { background: #4a90e2; color: #fff; padding: 24px 0; text-align: center; }
-    .about-section { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 32px; }
-    h1, h2 { margin-top: 0; }
-    footer { background: #222; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; }
-    @media (max-width: 600px) {
-      .about-section { padding: 16px; }
+    .tabs { display: flex; justify-content: space-between; margin-bottom: 24px; }
+    .tab { flex: 1; text-align: center; padding: 12px 0; cursor: pointer; border-bottom: 2px solid transparent; font-weight: 500; transition: border 0.2s, color 0.2s; }
+    .tab.active { border-bottom: 2.5px solid #4a90e2; color: #4a90e2; }
+    form { display: none; flex-direction: column; gap: 16px; }
+    form.active { display: flex; }
+    input[type="email"], input[type="text"], input[type="password"] { padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; }
+    button { background: #4a90e2; color: #fff; border: none; padding: 12px; font-size: 1rem; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #357abd; }
+    .login-title { text-align: center; margin-bottom: 18px; font-size: 1.4rem; font-weight: 600; }
+    @media (max-width: 500px) {
+      .container { padding: 18px 4px; }
+      .login-title { font-size: 1.1rem; }
+      .back-btn { top: 10px; left: 10px; padding: 6px 12px; font-size: 0.95rem; }
     }
-    
   </style>
 </head>
 <body>
@@ -72,30 +76,5 @@
       });
     });
   </script>
-</body>
-</html>
-
-  </style>
-</head>
-<body>
-  <header>
-    <h1>About PG Finder</h1>
-  </header>
-  <section class="about-section">
-    <h2>Who We Are</h2>
-    <p>PG Finder is a dedicated platform helping students and professionals find safe, affordable, and comfortable paying guest accommodations. Our mission is to make the search for a home away from home easy and trustworthy.</p>
-    <h2>Our Mission</h2>
-    <p>To connect people with verified PGs and hosts, ensuring a smooth and secure experience for everyone. We believe in transparency, safety, and comfort for all our users.</p>
-    <h2>Our Values</h2>
-    <ul>
-      <li>Trust & Transparency</li>
-      <li>Customer Satisfaction</li>
-      <li>Safety & Security</li>
-      <li>Continuous Improvement</li>
-    </ul>
-  </section>
-  <footer>
-    &copy; 2024 PG Finder | info@pgfinder.com
-  </footer>
 </body>
 </html> 

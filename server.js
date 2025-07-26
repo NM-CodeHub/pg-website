@@ -90,6 +90,19 @@ app.post('/upload-url', async (req, res) => {
   }
 });
 
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'uploads', 'login.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'uploads', 'about.html'));
+  });
+
+
+  app.get('/listings', (req, res) => {
+    res.sendFile(path.join(__dirname, 'uploads', 'listings.html'));
+  });
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
