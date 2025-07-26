@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG Home - Find Your Perfect Paying Guest Accommodation</title>
+  <style>
+    :root {
+      --bg-color: #f7f7f7;
+      --text-color: #222;
+      --header-bg: #4a90e2;
+      --card-bg: #fff;
+      --shadow: rgba(0,0,0,0.06);
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --text-color: #fff;
+      --header-bg: #2c3e50;
+      --card-bg: #2d2d2d;
+      --shadow: rgba(0,0,0,0.3);
+    }
+
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      margin: 0; 
+      background: var(--bg-color); 
+      color: var(--text-color); 
+      transition: all 0.3s ease;
+    }
+    header { 
+      background: var(--header-bg); 
+      color: #fff; 
+      padding: 24px 0; 
+      text-align: center; 
+      position: relative;
+    }
+    nav { margin-top: 10px; }
+    nav a { color: #fff; margin: 0 16px; text-decoration: none; font-weight: 500; }
+    .hero { background: #eaf4fb; padding: 48px 0 32px 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 12px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 24px; }
+    .cta-btn { background: #4a90e2; color: #fff; border: none; padding: 14px 32px; font-size: 1.1rem; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+    .cta-btn:hover { background: #357abd; }
+    .about, .gallery { 
+      max-width: 900px; 
+      margin: 40px auto; 
+      background: var(--card-bg); 
+      border-radius: 10px; 
+      box-shadow: 0 2px 8px var(--shadow); 
+      padding: 32px; 
+    }
+    .about h2, .gallery h2 { margin-top: 0; }
+    .gallery-images { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
+    .gallery-images img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    footer { background: #222; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; }
+    @media (max-width: 600px) {
+      .about, .gallery { padding: 16px; }
+      .gallery-images { flex-direction: column; align-items: center; }
+      .gallery-images img { width: 90vw; height: 120px; }
+      .hero h1 { font-size: 1.5rem; }
+      .highlight-text {
+     color: #e91e63; /* pink color */
+      }
+     
+     }
+  </style>
+     <script>
+      fetch('/pg-data')
+    .then(response => response.json())
+    .then(data => {
+      const pgList = document.getElementById('pgList');
+
+      data.forEach(pg => {
+        const li = document.createElement('li');
+        li.textContent = `Name: ${pg.name} | Location: ${pg.location} | Price: ₹${pg.price}`;
+        pgList.appendChild(li);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching PG data:', error);
+    });fetch('/pg-data')
+    .then(response => response.json())
+    .then(data => {
+      const pgList = document.getElementById('pgList');
+
+      data.forEach(pg => {
+        const li = document.createElement('li');
+        li.textContent = `Name: ${pg.name} | Location: ${pg.location} | Price: ₹${pg.price}`;
+        pgList.appendChild(li);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching PG data:', error);
+    });
+     </script>
+</head>
+<body>
+  <header>
+    <button id="darkModeToggle" style="position: absolute; top: 20px; right: 20px; background: #fff; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">🌙</button>
+    <h1 class="pgFinder">PG Finder</h1>
+    <nav>
+      <a href="/about">About</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1 class="pgfinder">Find Your Perfect PG Accommodation</h1>
+    <p>Discover the best paying guest options in your city. Safe, affordable, and comfortable stays for students and professionals.</p>
+    <a href="#gallery"><button class="cta-btn">View Listings</button></a>
+  </section>
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>PG Finder is your trusted platform to search and book verified paying guest accommodations. We connect you with hosts offering safe, hygienic, and budget-friendly PGs across major cities. Whether you are a student or a working professional, we help you find a place that feels like home.</p>
+  </section>
+  <section class="gallery" id="gallery">
+    <h2>Sample Gallery</h2>
+    <div class="gallery-images">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="PG Room 1">
+      <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80" alt="PG Room 2">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="PG Room 3">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&q=80" alt="PG Room 4">
+    </div>
+  </section>
+  <footer id="contact"class="highlight-text">
+    &copy; 2024 PG Finder | Contact: info@pgfinder.com
+  </footer>
+  <script>
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  darkModeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    darkModeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+  });
+
+  // Set initial icon
+  darkModeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+</script>
+</body>
+</html> 

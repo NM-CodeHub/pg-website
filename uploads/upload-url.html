@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Image from URL</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    input[type="text"] { width: 400px; padding: 8px; }
+    button { padding: 8px 16px; }
+    img { display: block; margin-top: 20px; max-width: 400px; }
+  </style>
+</head>
+<body>
+  <h2>Upload Image Using URL</h2>
+  <form id="urlForm" action="http://localhost:5000/upload-url" method="POST">
+    <input type="text" name="imageUrl" id="imageUrl" placeholder="Enter online image URL" required />
+    <button type="submit">Upload</button>
+  </form>
+  <img id="preview" src="" alt="Image Preview" style="display:none;" />
+  <script>
+    const imageUrlInput = document.getElementById('imageUrl');
+    const preview = document.getElementById('preview');
+    imageUrlInput.addEventListener('input', function() {
+      if (this.value.match(/^https?:\/\//)) {
+        preview.src = this.value;
+        preview.style.display = 'block';
+      } else {
+        preview.src = '';
+        preview.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
